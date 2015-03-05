@@ -5,32 +5,45 @@
   <body>
     <div style="position: relative;">
       <canvas id="grid-layer" style="position:absolute; z-index: 0;"></canvas>
-      <canvas id="animation-layer" style="position:absolute; z-index: 1;"></canvas>
+      <canvas id="level-layer" style="position:absolute; z-index: 1;"></canvas>
+      <canvas id="player-layer" style="position:absolute; z-index: 2;"></canvas>
     </div>
 
     <script type="application/javascript" src="./vendor/jquery-2.1.3.js"></script>
+    <script type="application/javascript" src="./vendor/keymaster.js"></script>
     <link rel="stylesheet" href="./css/application.css" type="application/css">
 
     <script type="application/javascript" src="./lib/utils.js"></script>
     <script type="application/javascript" src="./lib/levels.js"></script>
     <script type="application/javascript" src="./lib/block.js"></script>
+    <script type="application/javascript" src="./lib/moving_objects.js"></script>
     <script type="application/javascript" src="./lib/board.js"></script>
     <script type="application/javascript" src="./lib/game.js"></script>
     <script type="application/javascript" src="./lib/gameView.js"></script>
 
     <script type="application/javascript">
       (function() {
-        var canvasEl = document.getElementById("animation-layer")
+        var canvasEl = document.getElementById("level-layer");
         canvasEl.width = 1000;
         canvasEl.height= 1000;
         var ctx = canvasEl.getContext("2d");
-        var gridEl = document.getElementById("grid-layer")
+        var gridEl = document.getElementById("grid-layer");
         gridEl.width = 1000;
         gridEl.height = 1000;
-        var gtx = gridEl.getContext("2d")
-        var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx)
-        var game = new App.Game(board);
-        new App.GameView(game, ctx).start();
+        var gtx = gridEl.getContext("2d");
+        var playerEl = document.getElementById("player-layer");
+        playerEl.width = 1000;
+        playerEl.height = 1000;
+        var ptx = playerEl.getContext("2d");
+        var sprites = new Image();
+        sprites.src = './sprites/pacmansprites.png';
+        $(window).load(function(){
+          var movingObjects = new App.MovingObjects.MovingObjects([200, 200], [0, 0], sprites, ptx);
+          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, sprites);
+          var game = new App.Game(board, movingObjects);
+          new App.GameView(game, ctx).start();
+        });
+        
       })();
     </script>
   </body>
