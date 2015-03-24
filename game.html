@@ -5,9 +5,10 @@
   <body>
     <div style="position: relative;">
       <canvas id="grid-layer" style="position:absolute; z-index: 0;"></canvas>
-      <canvas id="player-debugging-layer" style="position:absolute; z-index: 1;"></canvas>
+      <canvas id="blinky-layer" style="position:absolute; z-index: 1;"></canvas>
       <canvas id="level-layer" style="position:absolute; z-index: 2;"></canvas>
       <canvas id="player-layer" style="position:absolute; z-index: 3;"></canvas>
+      <canvas id="pinky-layer" style="position:absolute; z-index: 4;"></canvas>
     </div>
 
     <script type="application/javascript" src="./vendor/jquery-2.1.3.js"></script>
@@ -36,10 +37,15 @@
         gridEl.height = 1000;
         var gtx = gridEl.getContext("2d");
 
-        var playerDebuggerEl = document.getElementById("player-debugging-layer");
-        playerDebuggerEl.width = 1000;
-        playerDebuggerEl.height = 1000;
-        var pdtx = playerDebuggerEl.getContext("2d");
+        var blinkyEl = document.getElementById("blinky-layer");
+        blinkyEl.width = 1000;
+        blinkyEl.height = 1000;
+        var pdtx = blinkyEl.getContext("2d");
+
+        var pinkyEl = document.getElementById("pinky-layer");
+        pinkyEl.width = 1000;
+        pinkyEl.height = 1000;
+        var pinkytx = pinkyEl.getContext("2d");
 
         var playerEl = document.getElementById("player-layer");
         playerEl.width = 1000;
@@ -49,8 +55,8 @@
         var sprites = new Image();
         sprites.src = './sprites/pacmansprites.png';
         $(window).load(function(){
-          var movingObjects = new App.MovingObjects.MovingObjects([200, 200], [0, 0], sprites, ptx, gtx, pdtx);
-          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, pdtx, sprites);
+          var movingObjects = new App.MovingObjects.MovingObjects([200, 200], [0, 0], sprites, ptx, gtx, pdtx, pinkytx);
+          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, pdtx, pinkytx, sprites);
           var game = new App.Game(board, movingObjects);
           new App.GameView(game, ctx).start();
         });
