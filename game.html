@@ -9,6 +9,8 @@
       <canvas id="level-layer" style="position:absolute; z-index: 2;"></canvas>
       <canvas id="player-layer" style="position:absolute; z-index: 3;"></canvas>
       <canvas id="pinky-layer" style="position:absolute; z-index: 4;"></canvas>
+      <canvas id="inky-layer" style="position:absolute; z-index: 5;"></canvas>
+      <canvas id="clyde-layer" style="position:absolute; z-index: 6;"></canvas>
     </div>
 
     <script type="application/javascript" src="./vendor/jquery-2.1.3.js"></script>
@@ -47,16 +49,28 @@
         pinkyEl.height = 1000;
         var pinkytx = pinkyEl.getContext("2d");
 
+        var inkyEl = document.getElementById("inky-layer");
+        inkyEl.width = 1000;
+        inkyEl.height = 1000;
+        var inkytx = inkyEl.getContext("2d");
+
+        var clydeEl = document.getElementById("clyde-layer");
+        clydeEl.width = 1000;
+        clydeEl.height = 1000;
+        var clydetx = clydeEl.getContext("2d");
+
         var playerEl = document.getElementById("player-layer");
         playerEl.width = 1000;
         playerEl.height = 1000;
         var ptx = playerEl.getContext("2d");
 
+
+
         var sprites = new Image();
         sprites.src = './sprites/pacmansprites.png';
         $(window).load(function(){
-          var movingObjects = new App.MovingObjects.MovingObjects([200, 200], [0, 0], sprites, ptx, gtx, pdtx, pinkytx);
-          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, pdtx, pinkytx, sprites);
+          var movingObjects = new App.MovingObjects.MovingObjects([200, 200], [0, 0], sprites, ptx, gtx, pdtx, pinkytx, inkytx, clydetx);
+          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, pdtx, pinkytx, inkytx, clydetx, sprites);
           var game = new App.Game(board, movingObjects);
           new App.GameView(game, ctx).start();
         });
