@@ -50,7 +50,7 @@
         var blinkyEl = document.getElementById("blinky-layer");
         blinkyEl.width = 1000;
         blinkyEl.height = 1000;
-        var pdtx = blinkyEl.getContext("2d");
+        var blinkytx = blinkyEl.getContext("2d");
 
         var pinkyEl = document.getElementById("pinky-layer");
         pinkyEl.width = 1000;
@@ -77,9 +77,9 @@
         var sprites = new Image();
         sprites.src = './sprites/pacmansprites.png';
         $(window).load(function(){
-          var movingObjects = new App.MovingObjects.MovingObjects([200, 200], [0, 0], sprites, ptx, gtx, pdtx, pinkytx, inkytx, clydetx);
+          var movingObjects = new App.MovingObjects.MovingObjects([200, 200], [0, 0], sprites, ptx, gtx, blinkytx, pinkytx, inkytx, clydetx);
           var stationaryObjects = new App.StationaryObjects.Dots([0, 0], sprites, dotstx);
-          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, pdtx, pinkytx, inkytx, clydetx, dotstx,sprites);
+          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, blinkytx, pinkytx, inkytx, clydetx, dotstx,sprites);
           var game = new App.Game(board, movingObjects, stationaryObjects);
           new App.GameView(game, ctx).start();
         });
