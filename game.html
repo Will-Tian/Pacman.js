@@ -4,6 +4,7 @@
   </head>
   <body>
     <div style="position: relative;">
+      <canvas id="dots-layer" style="position:absolute; z-index: -1;"></canvas>
       <canvas id="grid-layer" style="position:absolute; z-index: 0;"></canvas>
       <canvas id="blinky-layer" style="position:absolute; z-index: 1;"></canvas>
       <canvas id="level-layer" style="position:absolute; z-index: 2;"></canvas>
@@ -22,6 +23,7 @@
     <script type="application/javascript" src="./lib/levels.js"></script>
     <script type="application/javascript" src="./lib/block.js"></script>
     <script type="application/javascript" src="./lib/moving_objects.js"></script>
+    <script type="application/javascript" src="./lib/stationary_objects.js"></script>
     <script type="application/javascript" src="./lib/ghosts.js"></script>
     <script type="application/javascript" src="./lib/board.js"></script>
     <script type="application/javascript" src="./lib/game.js"></script>
@@ -29,6 +31,12 @@
 
     <script type="application/javascript">
       (function() {
+
+        var dotsEl = document.getElementById("dots-layer");
+        dotsEl.width = 1000;
+        dotsEl.height = 1000;
+        var dotstx = dotsEl.getContext("2d");
+
         var canvasEl = document.getElementById("level-layer");
         canvasEl.width = 1000;
         canvasEl.height= 1000; 
@@ -70,8 +78,9 @@
         sprites.src = './sprites/pacmansprites.png';
         $(window).load(function(){
           var movingObjects = new App.MovingObjects.MovingObjects([200, 200], [0, 0], sprites, ptx, gtx, pdtx, pinkytx, inkytx, clydetx);
-          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, pdtx, pinkytx, inkytx, clydetx, sprites);
-          var game = new App.Game(board, movingObjects);
+          var stationaryObjects = new App.StationaryObjects.Dots([0, 0], sprites, dotstx);
+          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, pdtx, pinkytx, inkytx, clydetx, dotstx,sprites);
+          var game = new App.Game(board, movingObjects, stationaryObjects);
           new App.GameView(game, ctx).start();
         });
         
