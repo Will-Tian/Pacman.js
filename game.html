@@ -28,62 +28,12 @@
     <script type="application/javascript" src="./lib/board.js"></script>
     <script type="application/javascript" src="./lib/game.js"></script>
     <script type="application/javascript" src="./lib/gameView.js"></script>
+    <script type="application/javascript" src="./lib/initializer.js"></script>
 
     <script type="application/javascript">
       (function() {
-
-        var dotsEl = document.getElementById("dots-layer");
-        dotsEl.width = 1000;
-        dotsEl.height = 1000;
-        var dotstx = dotsEl.getContext("2d");
-
-        var canvasEl = document.getElementById("level-layer");
-        canvasEl.width = 1000;
-        canvasEl.height= 1000; 
-        var ctx = canvasEl.getContext("2d");
-
-        var gridEl = document.getElementById("grid-layer");
-        gridEl.width = 1000;
-        gridEl.height = 1000;
-        var gtx = gridEl.getContext("2d");
-
-        var blinkyEl = document.getElementById("blinky-layer");
-        blinkyEl.width = 1000;
-        blinkyEl.height = 1000;
-        var blinkytx = blinkyEl.getContext("2d");
-
-        var pinkyEl = document.getElementById("pinky-layer");
-        pinkyEl.width = 1000;
-        pinkyEl.height = 1000;
-        var pinkytx = pinkyEl.getContext("2d");
-
-        var inkyEl = document.getElementById("inky-layer");
-        inkyEl.width = 1000;
-        inkyEl.height = 1000;
-        var inkytx = inkyEl.getContext("2d");
-
-        var clydeEl = document.getElementById("clyde-layer");
-        clydeEl.width = 1000;
-        clydeEl.height = 1000;
-        var clydetx = clydeEl.getContext("2d");
-
-        var playerEl = document.getElementById("player-layer");
-        playerEl.width = 1000;
-        playerEl.height = 1000;
-        var ptx = playerEl.getContext("2d");
-
-
-
-        var sprites = new Image();
-        sprites.src = './sprites/pacmansprites.png';
-        $(window).load(function(){
-          var movingObjects = new App.MovingObjects.MovingObjects([200, 200], [0, 0], sprites, ptx, gtx, blinkytx, pinkytx, inkytx, clydetx);
-          var stationaryObjects = new App.StationaryObjects.Dots([0, 0], sprites, dotstx);
-          var board = new App.Boards.Board(App.Levels.levelOne, ctx, gtx, ptx, blinkytx, pinkytx, inkytx, clydetx, dotstx,sprites);
-          var game = new App.Game(board, movingObjects, stationaryObjects);
-          new App.GameView(game, ctx).start();
-        });
-        
+          var initializer = new App.Initializer(App.Levels, 'levelOne');
+          initializer.initialize();
       })();
     </script>
   </body>
