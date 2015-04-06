@@ -2,7 +2,35 @@ body {
   background-color: black;
 }
 
+@font-face {
+	font-family: arcadePixelated;
+	src: url(./arcade-pixelated.ttf);
+}
+
+@font-face {
+	font-family: pacStylized;
+	src: url(./pac-stylized.ttf);
+}
+
 canvas {
   margin-top: 100px;
   margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+#score-layer {
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+#menu-layer {
+	z-index: 7;
+	position: absolute;
+	margin-top: 100px;
+	margin-left: 100px;
+	width: 600px;
+	height: 600px;
+	font-family: arcadePixelated;
+	color: white;
+	font-size: 12;
 }
