@@ -13,24 +13,65 @@ body {
 }
 
 canvas {
-  margin-top: 100px;
-  margin-left: 100px;
+  margin-top: 55px;
+  margin-left: 200px;
   margin-bottom: 50px;
 }
 
-#score-layer {
-	margin-top: 50px;
-	margin-left: 100px;
-}
-
-#menu-layer {
+.menu-layer {
 	z-index: 7;
 	position: absolute;
-	margin-top: 100px;
-	margin-left: 100px;
-	width: 600px;
-	height: 600px;
+	margin-top: 55px;
+	margin-left: 200px;
+	width: 562px;
+	height: 622px;
 	font-family: arcadePixelated;
 	color: white;
 	font-size: 12;
+	/*visibility: hidden;*/
 }
+
+.in-game-options {
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	z-index: 8;
+	top: 150px;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 15;
+}
+
+.menu-option {
+	width: 200px;
+	height: 50px;
+	margin: auto;
+	margin-bottom: 10px;
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    border: 2px solid grey;
+    color: grey;
+}
+
+.menu-option:hover{
+    border: 2px solid white;
+    color: white;
+}
+
+span {
+  position: relative;
+  top: 30%;
+
+}
+
+#score-layer {
+	margin-top: 5px;
+	margin-left: 200px;
+}
+
+
+
