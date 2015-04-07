@@ -18,6 +18,10 @@ canvas {
   margin-bottom: 50px;
 }
 
+.canvas{
+	opacity: 1;
+}
+
 .menu-layer {
 	z-index: 7;
 	position: absolute;
@@ -41,6 +45,7 @@ canvas {
 	text-align: center;
 	vertical-align: middle;
 	font-size: 15;
+	display: none;
 }
 
 .menu-option {
