@@ -13,10 +13,24 @@
       <canvas id="pinky-layer" style="position:absolute; z-index: 4;"></canvas>
       <canvas id="inky-layer" style="position:absolute; z-index: 5;"></canvas>
       <canvas id="clyde-layer" style="position:absolute; z-index: 6;"></canvas>
+
     </div>
 
     <div class="menu-layer">
+        <canvas id="menu-pacman-layer" style="position:absolute; z-index: -3;"></canvas>
+        <canvas id="menu-ghosts-layer" style="position:absolute; z-index: -2;"></canvas>
+        
+        <div class="start-screen-options">
+          <div id="menu-banner">
+            <span>MS.PA</span><span>C</span><span>MAN</span>
+          </div>
+          <div class="menu-option" id="to-play"><span>Play Game</span></div>
+          <div class="menu-option" id="to-levels"><span>Levels</span></div>
+          <div class="menu-option" id="to-about"><span>About</span></div>
+        </div>
+
         <div class="in-game-options">
+          <span>Game Over!</span>
           <div class="menu-option" id="to-restart"><span>Restart Game</span></div>
           <div class="menu-option" id="to-menu"><span>Exit to Menu</span></div>
         </div>
@@ -41,9 +55,15 @@
 
     <script type="application/javascript">
       (function() {
-          App.initializer = new App.Initializer(App.Levels, 'levelOne');
-          App.initializer.bindEvents();
-          App.initializer.initialize();
+          var sprites = new Image();
+          sprites.src = './sprites/pacmansprites.png';
+          $(window).load(function(){
+              App.initializer = new App.Initializer(App.Levels, sprites);
+              App.initializer.bindEvents();
+              // App.initializer.initialize('levelOne');
+              // App.initializer.initializeGameDraw();
+          });
+
       })();
     </script>
   </body>

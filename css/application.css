@@ -26,8 +26,8 @@ canvas {
 	z-index: 7;
 	position: absolute;
 	margin-top: 55px;
-	margin-left: 200px;
-	width: 562px;
+	margin-left: 320px;
+	width: 442px;
 	height: 622px;
 	font-family: arcadePixelated;
 	color: white;
@@ -36,6 +36,7 @@ canvas {
 }
 
 .in-game-options {
+	left: -60;
 	position: relative;
 	display: block;
 	vertical-align: middle;
@@ -62,6 +63,11 @@ canvas {
     color: grey;
 }
 
+.in-game-options .menu-option {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
 .menu-option:hover{
     border: 2px solid white;
     color: white;
@@ -71,6 +77,36 @@ span {
   position: relative;
   top: 30%;
 
+}
+
+.start-screen-options {
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	z-index: 7;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 15;
+	height: 470px;
+
+}
+
+.menu-layer canvas {
+	margin-top: 0px;
+  	margin-left: 0px;
+  	margin-bottom: 0px;
+}
+
+#menu-banner {
+	font-family: pacStylized;
+	font-size: 50;
+	color: yellow;
+	height: 200px;
+}
+
+.start-screen-options .menu-option {
+	width: 400px;
 }
 
 #score-layer {
