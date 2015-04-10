@@ -114,5 +114,33 @@ span {
 	margin-left: 200px;
 }
 
+.about {
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	z-index: 9;
+	top: 150px;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 15;
+	display: none;
+}
+
+.levels {
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	z-index: 10;
+	margin: auto;
+	text-align: center;
+	font-size: 15;
+	display: none;
+}
+
+.levels .menu-option {
+	width: 300px;
+}
+
 
 
