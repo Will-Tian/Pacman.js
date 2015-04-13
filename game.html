@@ -82,12 +82,23 @@
     <script type="application/javascript" src="./lib/gameView.js"></script>
     <script type="application/javascript" src="./lib/initializer.js"></script>
 
+
     <script type="application/javascript">
       (function() {
           var sprites = new Image();
           sprites.src = './sprites/pacmansprites.png';
+          var beginningSound = new Audio();
+          beginningSound.src = "./sound_files/pacman_beginning.wav";
+          beginningSound.volume = .4
+          var eatGhostSound = new Audio();
+          eatGhostSound.src = "./sound_files/pacman_eatghost.wav"
+          eatGhostSound.volume = .4
+          var deathSound = new Audio();
+          deathSound.src = "./sound_files/pacman_death.wav"
+          deathSound.volume = .4
+
           $(window).load(function(){
-              App.initializer = new App.Initializer(App.Levels, sprites);
+              App.initializer = new App.Initializer(App.Levels, sprites, beginningSound, deathSound, eatGhostSound);
               App.initializer.animate();
               App.initializer.bindEvents();
               // App.initializer.initialize('levelOne');
