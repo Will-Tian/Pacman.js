@@ -1,6 +1,6 @@
 # Ms.Pacman
 
-[GitHub Pages link][github_pages]
+[GitHub Pages Link][github_pages]
 
 [github_pages]:http://will-tian.github.io/Pacman.js/
 
