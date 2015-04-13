@@ -88,6 +88,7 @@
           sprites.src = './sprites/pacmansprites.png';
           $(window).load(function(){
               App.initializer = new App.Initializer(App.Levels, sprites);
+              App.initializer.animate();
               App.initializer.bindEvents();
               // App.initializer.initialize('levelOne');
               // App.initializer.initializeGameDraw();
