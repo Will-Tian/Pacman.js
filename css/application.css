@@ -35,7 +35,29 @@ canvas {
 	/*visibility: hidden;*/
 }
 
-.in-game-options {
+.in-game-options-to-menu {
+	
+	left: -60;
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	z-index: 9;
+	top: -40px;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 10;
+	display: none;
+
+}
+
+.in-game-options-to-menu .menu-option {
+	width: 200px;
+	height: 30px;
+	color: white;
+}
+
+.in-game-options-loss {
 	left: -60;
 	position: relative;
 	display: block;
@@ -47,6 +69,40 @@ canvas {
 	vertical-align: middle;
 	font-size: 15;
 	display: none;
+}
+
+.in-game-options-loss .menu-option {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.in-game-options-win {
+	left: -60;
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	z-index: 9;
+	top: 150px;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 15;
+	display: none;
+}
+
+.in-game-options-win span:nth-child(1) {
+	font-size: 25;
+	color: yellow;
+}
+
+.in-game-options-win .menu-option {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.in-game-options-win .menu-option span {
+	font-size: 15;
+	color: white;
 }
 
 .menu-option {
@@ -61,11 +117,6 @@ canvas {
     overflow: hidden;
     border: 2px solid grey;
     color: grey;
-}
-
-.in-game-options .menu-option {
-	margin-top: 20px;
-	margin-bottom: 0px;
 }
 
 .menu-option:hover{
