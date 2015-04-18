@@ -31,7 +31,7 @@ canvas {
 	height: 622px;
 	font-family: arcadePixelated;
 	color: white;
-	font-size: 12;
+	font-size: 12px;
 	/*visibility: hidden;*/
 }
 
@@ -67,7 +67,7 @@ canvas {
 	margin: auto;
 	text-align: center;
 	vertical-align: middle;
-	font-size: 15;
+	font-size: 15px;
 	display: none;
 }
 
@@ -86,12 +86,12 @@ canvas {
 	margin: auto;
 	text-align: center;
 	vertical-align: middle;
-	font-size: 15;
+	font-size: 15px;
 	display: none;
 }
 
 .in-game-options-win span:nth-child(1) {
-	font-size: 25;
+	font-size: 25px;
 	color: yellow;
 }
 
@@ -101,7 +101,7 @@ canvas {
 }
 
 .in-game-options-win .menu-option span {
-	font-size: 15;
+	font-size: 15px;
 	color: white;
 }
 
@@ -138,7 +138,7 @@ span {
 	margin: auto;
 	text-align: center;
 	vertical-align: middle;
-	font-size: 15;
+	font-size: 15px;
 	height: 470px;
 
 }
@@ -174,7 +174,7 @@ span {
 	margin: auto;
 	text-align: center;
 	vertical-align: middle;
-	font-size: 15;
+	font-size: 15px;
 	display: none;
 }
 
@@ -185,7 +185,7 @@ span {
 	z-index: 10;
 	margin: auto;
 	text-align: center;
-	font-size: 15;
+	font-size: 15px;
 	display: none;
 }
 
