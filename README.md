@@ -1,10 +1,12 @@
 # Ms.Pacman
 
-[GitHub Pages Link][github_pages]
+[Live][github_pages]
 
 [github_pages]:http://will-tian.github.io/Pacman.js/
 
 ##Ms.Pacman is a recreation of the origin Pacman Arcade Game by Namco (c) 1980
+
+###Current Browser Support: Chrome/Safari/FireFox
 
 Features
 
